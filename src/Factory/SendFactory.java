@@ -15,4 +15,12 @@ public class SendFactory {
             return null;
         }
     }
+
+    public Sender buildMail(){
+        return new MailSender();
+    }
+
+    public Sender buildSms(){
+        return new SmsSender();
+    }
 }
