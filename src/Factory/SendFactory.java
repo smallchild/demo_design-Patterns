@@ -16,11 +16,11 @@ public class SendFactory {
         }
     }
 
-    public Sender buildMail(){
+    public static Sender buildMail(){
         return new MailSender();
     }
 
-    public Sender buildSms(){
+    public static Sender buildSms(){
         return new SmsSender();
     }
 }

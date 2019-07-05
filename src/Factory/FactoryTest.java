@@ -5,6 +5,6 @@ public class FactoryTest {
         SendFactory sendFactory = new SendFactory();
         sendFactory.buildSender("sms").send();
 
-        sendFactory.buildMail().send();
+        SendFactory.buildMail().send();
     }
 }
