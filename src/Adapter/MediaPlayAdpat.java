@@ -11,7 +11,8 @@ package Adapter;
 public class MediaPlayAdpat implements MediaPlayer {
     AdvencedMediaPlayer advencedMediaPlayer;
 
-    public void MediaPlayAdapt(String aduioType){
+
+    public MediaPlayAdpat(String aduioType){
         if("mp4".equalsIgnoreCase(aduioType)){
             advencedMediaPlayer = new MP4Player();
         }else if("avi".equalsIgnoreCase(aduioType)){
@@ -20,6 +21,11 @@ public class MediaPlayAdpat implements MediaPlayer {
     }
 
     @Override public void play(String audioType, String fileName) {
-
+        if(audioType.equalsIgnoreCase("mp4")) {
+            advencedMediaPlayer.playMP4(fileName);
+        }
+        else if(audioType.equalsIgnoreCase("avi")) {
+            advencedMediaPlayer.playAVI(fileName);
+        }
     }
 }
